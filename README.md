@@ -6,7 +6,7 @@ axiom is an attempt to standardize a development environment for all things PiE 
 few simple steps, you too can begin hacking away at your first PiE-related project!
 
 ## Uhhh...sure, but what is it?
-The axiom environment is a vagrant machine running on docker that comes complete with all
+The axiom environment is a vagrant machine provided by virtualbox that comes complete with all
 dependencies necessary for every project in the PiE software stack. If all of these terms sound
 like mindless techno-babble to you, they essentially mean that installing a few programs
 (two, to be exact) and running few commands is enough to set up your system so you never have to
