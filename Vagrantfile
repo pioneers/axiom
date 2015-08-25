@@ -45,6 +45,14 @@ Vagrant.configure(2) do |config|
     # that it doesn't take an absurdly long time.
     vb.cpus = 1
     vb.memory = "1024"
+
+    vb.customize [ "modifyvm", :id, "--usb", "on" ]
+    vb.customize [ "usbfilter", "add", "0",
+      "--target", :id,
+      "--name", "Arduino Nano",
+      "--vendorid", "0x1a86",
+      "--productid", "0x7523",
+    ]
   end
 
   # Enable provisioning with a shell script. Additional provisioners such as

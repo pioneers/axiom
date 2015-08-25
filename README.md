@@ -19,32 +19,31 @@ We use virtualbox as our vagrant provider, so head on over to their
 <a href="https://www.virtualbox.org/wiki/Downloads">website</a>
 and install the correct version for your operating system (the newest version is fine).
 
-You'll also need to have vagrant installed on your machine. This should be relatively simple. Either
+Note: You'll need to install Virtualbox *and* the extension pack.
+
+You'll also need to have vagrant installed on your machine. This also should be relatively simple. Either
 install it using your favorite package manager, or make your way down to
 http://www.vagrantup.com/downloads and download/run the correct installer for your OS.
 
 ##### *Actually* installing things
 Done? Good. Clone this repo into a directory of choice,
 ```
-cd path/to/somewhere                        #replace this path
+cd path/to/somewhere # replace this path with wherever you want to place your PiE-related stuff.
 git clone git@github.com:pioneers/axiom.git
 ```
 cd into the directory that you just cloned
 ```
 cd axiom
 ```
-and run
-```
-vagrant box add ubuntu/trusty64 https://atlas.hashicorp.com/ubuntu/boxes/trusty64
-vagrant up # expect this to take **awhile**, so go find something more fun to do
-```
+and run `./setup.sh`.
+
+After `./setup.sh` finishes, restart your computer and then run  `vagrant up`. Expect this command to
+take awhile to finish, so find something fun to do and come back in 10-15 minutes.
+
 If you're not familiar with git or have no idea what "clone this repo" or "cd into..." means, don't
 be scared to ask a fellow PiE staff member for a bit of help.
 
-After `vagrant up` completes, run
-```
-vagrant ssh
-```
+After `vagrant up` completes, run `vagrant ssh`
 to ssh into your shiny, new dev VM.
 &nbsp;
 
@@ -55,7 +54,7 @@ That's it, you're good to go! Ask your PM about how to start contributing!
   code in. It turns out the `projects` folder (the happy home of the PiE codebase) in this repo is
   easily accessible from your vagrant machine in `~/projects`. This directory, of course, is a shared
   folder between your Vagrant VM and host machine, so now you can edit files that live in your virtual
-  machine locally using your text editor of choice (**cough** vim **cough**). 
+  machine locally using your text editor of choice (**cough** vim **cough**).
 
   We recommend cloning the projects that you're working on into ./projects, coding locally, and
   using the VM for building & testing your work.

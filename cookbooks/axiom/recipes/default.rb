@@ -1,3 +1,4 @@
+###############################################################################
 # --- Install apt-get packages ---
 package 'build-essential' do
   version '11.6ubuntu6'
@@ -44,7 +45,7 @@ package 'htop'
 
 ###############################################################################
 # --- nodejs stuff ---
-
+#
 # install nodejs, globally installed npm packages, and dawn specific packages
 # (we're assuming the dawn repo has been cloned in the expected location)
 bash 'nodejsSetup' do
