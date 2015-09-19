@@ -39,12 +39,8 @@ Vagrant.configure(2) do |config|
   # Example for VirtualBox:
 
   config.vm.provider "virtualbox" do |vb|
-    # These super low-spec settings were chosen to emulate the specs that we'll
-    # have available to us when running on the beaglebone black. You may want to
-    # increase the resources available to the VM when initially setting it up so
-    # that it doesn't take an absurdly long time.
-    vb.cpus = 1
-    vb.memory = "1024"
+    vb.cpus = 2
+    vb.memory = "2048"
 
     vb.customize [ "modifyvm", :id, "--usb", "on" ]
     vb.customize [ "usbfilter", "add", "0",
