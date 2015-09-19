@@ -66,5 +66,6 @@ bash 'pythonPackagesSetup' do
   code <<-EOH
     sudo pip install --upgrade enum34
     sudo pip install --upgrade pyserial
+    sudo pip install --upgrade pyzmq
   EOH
 end
