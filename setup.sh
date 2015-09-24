@@ -6,7 +6,13 @@
 # completely clean install.
 
 sudo usermod -a -G vboxusers $USER
+
 vagrant box add ubuntu/trusty64 https://atlas.hashicorp.com/ubuntu/boxes/trusty64/versions/20150821.0.0/providers/virtualbox.box
+
 if [ ! -d ./projects ]; then
   mkdir projects
+fi
+
+if [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+  git config --system core.longpaths true
 fi
