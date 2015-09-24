@@ -33,6 +33,9 @@ end
 package 'python' do
   version '2.7.5-5ubuntu3'
 end
+package 'python-dev' do
+  version '2.7.5-5ubuntu3'
+end
 package 'python-pip' do
   version '1.5.4-1'
 end
