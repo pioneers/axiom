@@ -64,6 +64,20 @@ bash 'nodejsSetup' do
 end
 
 ###############################################################################
+# --- stuff4 webpplz ---
+package 'ruby' do
+  version '1:1.9.3.4'
+end
+package 'ruby-dev' do
+  version '1:1.9.3.4'
+end
+bash 'jekyllSetup' do
+  code <<-EOH
+    sudo gem install jekyll --no-rdoc --no-ri
+  EOH
+end
+
+###############################################################################
 # --- python stuff ---
 bash 'pythonPackagesSetup' do
   code <<-EOH
