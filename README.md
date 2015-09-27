@@ -37,8 +37,8 @@ cd axiom
 ```
 and run `./setup.sh`.
 
-After `./setup.sh` finishes, restart your computer and then run  `vagrant up`. Expect this command to
-take awhile to finish, so find something fun to do and come back in 10-15 minutes.
+After `./setup.sh` finishes, run `vagrant up`. Expect this command to
+take awhile to finish, so find something fun to do and come back in 10-20 minutes.
 
 If you're not familiar with git or have no idea what "clone this repo" or "cd into..." means, don't
 be scared to ask a fellow PiE staff member for a bit of help.
@@ -50,17 +50,11 @@ to ssh into your shiny, new dev VM.
 That's it, you're good to go! Ask your PM about how to start contributing!
 
 ## Other stuff
-- The Vagrant VM is great for running builds and the like, but its not so great for actually writing
-  code in. It turns out the `projects` folder (the happy home of the PiE codebase) in this repo is
-  easily accessible from your vagrant machine in `~/projects`. This directory, of course, is a shared
-  folder between your Vagrant VM and host machine, so now you can edit files that live in your virtual
-  machine locally using your text editor of choice (**cough** vim **cough**).
-
-  We recommend cloning the projects that you're working on into ./projects, coding locally, and
-  using the VM for building & testing your work.
+- You can access files on your VM by opening up your file browser of choice (Windows Explorer,
+  Finder, etc.) and navigating to `smb://10.31.3.14/vagrant`. Doing this, it's possible to edit code
+  on your local machine and use the VM to build / compile your code.
 - run `vagrant halt` in the directory with your Vagrantfile when you're done working. This will shut
   down the Vagrant VM until next time.
 - unsurprisingly, `vagrant up` can be used to restart Vagrant when you decide to get back to work.
 - look out for vagrant occasionally yelling at you to update your VM with
-
   `vagrant box update`
