@@ -19,8 +19,6 @@ We use virtualbox as our vagrant provider, so head on over to their
 <a href="https://www.virtualbox.org/wiki/Downloads">website</a>
 and install the correct version for your operating system (the newest version is fine).
 
-Note: You'll need to install Virtualbox *and* the extension pack.
-
 You'll also need to have vagrant installed on your machine. This also should be relatively simple. Either
 install it using your favorite package manager, or make your way down to
 http://www.vagrantup.com/downloads and download/run the correct installer for your OS.
@@ -51,7 +49,7 @@ That's it, you're good to go! Ask your PM about how to start contributing!
 
 ## Other stuff
 - You can access files on your VM by opening up your file browser of choice (Windows Explorer,
-  Finder, etc.) and navigating to `smb://10.31.3.14/vagrant`. Doing this, it's possible to edit code
+  Finder, etc.) and navigating to `smb://10.31.3.14/vagrant` (for those of you running linux or osx) or `\\10.31.3.14\vagrant` (for windows users). Doing this, it's possible to edit code
   on your local machine and use the VM to build / compile your code.
 - run `vagrant halt` in the directory with your Vagrantfile when you're done working. This will shut
   down the Vagrant VM until next time.
