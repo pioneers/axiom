@@ -19,19 +19,23 @@ package 'samba'
 package 'cifs-utils'
 bash 'sambaSetup' do
   code <<-EOH
-    sudo smbpasswd -an vagrant
-    # please ignore how jank this is for now
-    sudo echo '[vagrant]' >> /etc/samba/smb.conf
-    sudo echo 'path = /home/vagrant/' >> /etc/samba/smb.conf
-    sudo echo 'available = yes' >> /etc/samba/smb.conf
-    sudo echo 'read only = no' >> /etc/samba/smb.conf
-    sudo echo 'browseable = yes' >> /etc/samba/smb.conf
-    sudo echo 'public = yes' >> /etc/samba/smb.conf
-    sudo echo 'writable = yes' >> /etc/samba/smb.conf
-    sudo echo 'guest ok = yes' >> /etc/samba/smb.conf
-    sudo echo 'guest only = yes' >> /etc/samba/smb.conf
-    sudo echo 'vagrant = "vagrant"' >> /etc/samba/smbusers
-    sudo service smbd restart
+    if [ ! -d /home/vagrant/shared ]; then
+      mkdir -p /home/vagrant/shared
+      sudo smbpasswd -an vagrant
+      # please ignore how jank this is for now
+      sudo echo '[vagrant]' >> /etc/samba/smb.conf
+      sudo echo 'path = /home/vagrant/shared' >> /etc/samba/smb.conf
+      sudo echo 'available = yes' >> /etc/samba/smb.conf
+      sudo echo 'read only = no' >> /etc/samba/smb.conf
+      sudo echo 'browseable = yes' >> /etc/samba/smb.conf
+      sudo echo 'public = yes' >> /etc/samba/smb.conf
+      sudo echo 'writeable = yes' >> /etc/samba/smb.conf
+      sudo echo 'guest ok = yes' >> /etc/samba/smb.conf
+      sudo echo 'guest only = yes' >> /etc/samba/smb.conf
+      sudo echo 'vagrant = "vagrant"' >> /etc/samba/smbusers
+      chmod a+rwx /home/vagrant/shared
+      sudo service smbd restart
+    fi;
   EOH
 end
 

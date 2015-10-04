@@ -49,8 +49,10 @@ That's it, you're good to go! Ask your PM about how to start contributing!
 
 ## Other stuff
 - You can access files on your VM by opening up your file browser of choice (Windows Explorer,
-  Finder, etc.) and navigating to `smb://10.31.3.14/vagrant` (for those of you running linux or osx) or `\\10.31.3.14\vagrant` (for windows users). Doing this, it's possible to edit code
-  on your local machine and use the VM to build / compile your code.
+  Finder, etc.) and navigating to `smb://axiom/vagrant` (for those of you running linux or osx) or
+  `\\axiom\vagrant` (for windows users). Doing this, it's possible to edit code
+  on your local machine and use the VM to build / compile your code. (If navigating to axiom/vagrant
+  or axiom\vagrant above doesn't work for you, try replacing 'axiom' with '10.31.3.14')
 - run `vagrant halt` in the directory with your Vagrantfile when you're done working. This will shut
   down the Vagrant VM until next time.
 - unsurprisingly, `vagrant up` can be used to restart Vagrant when you decide to get back to work.
