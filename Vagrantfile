@@ -20,6 +20,7 @@ Vagrant.configure(2) do |config|
   # using a specific IP.
   config.vm.network "private_network", ip: "10.31.3.14"
   config.vm.network "forwarded_port", guest: 3000, host: 3000
+  config.vm.network "forwarded_port", guest: 4000, host: 4000
   config.vm.network "forwarded_port", guest: 12355, host: 12355
   config.vm.network "forwarded_port", guest: 12356, host: 12356
 
