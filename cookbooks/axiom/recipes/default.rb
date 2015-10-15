@@ -87,3 +87,11 @@ bash 'jekyllSetup' do
     sudo gem install jekyll --no-rdoc --no-ri
   EOH
 end
+
+
+bash 'update' do
+  code <<-EOH
+    sudo apt-get update
+    sudo apt-get upgrade
+  EOH
+end
