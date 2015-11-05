@@ -22,18 +22,9 @@ bash 'sambaSetup' do
     if [ ! -d /home/vagrant/shared ]; then
       mkdir -p /home/vagrant/shared
       sudo smbpasswd -an vagrant
-      # please ignore how jank this is for now
-      sudo echo '[vagrant]' >> /etc/samba/smb.conf
-      sudo echo 'path = /home/vagrant/shared' >> /etc/samba/smb.conf
-      sudo echo 'available = yes' >> /etc/samba/smb.conf
-      sudo echo 'read only = no' >> /etc/samba/smb.conf
-      sudo echo 'browseable = yes' >> /etc/samba/smb.conf
-      sudo echo 'public = yes' >> /etc/samba/smb.conf
-      sudo echo 'writeable = yes' >> /etc/samba/smb.conf
-      sudo echo 'guest ok = yes' >> /etc/samba/smb.conf
-      sudo echo 'guest only = yes' >> /etc/samba/smb.conf
-      sudo echo 'vagrant = "vagrant"' >> /etc/samba/smbusers
-      chmod a+rwx /home/vagrant/shared
+      sudo rm /etc/samba/smb.conf
+      sudo cp /vagrant/resources/smb.conf /etc/samba/
+      chmod a+rw /home/vagrant/shared
       sudo service smbd restart
     fi;
   EOH
