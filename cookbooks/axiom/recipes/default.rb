@@ -75,14 +75,6 @@ package 'ruby-dev' do
 end
 bash 'jekyllSetup' do
   code <<-EOH
-    sudo gem install jekyll --no-rdoc --no-ri
-  EOH
-end
-
-
-bash 'update' do
-  code <<-EOH
-    sudo apt-get update
-    sudo apt-get upgrade
+    sudo gem install jekyll -v '2.5.3'
   EOH
 end
