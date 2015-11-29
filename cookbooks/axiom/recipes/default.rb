@@ -40,7 +40,7 @@ end
 # (we're assuming the dawn repo has been cloned in the expected location)
 bash 'nodejsSetup' do
   code <<-EOH
-    curl -sL https://deb.nodesource.com/setup | sudo bash
+    curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
     sudo apt-get install -y nodejs
     sudo apt-get install -y npm
     sudo npm install -g gulp
@@ -62,6 +62,7 @@ bash 'pythonPackagesSetup' do
     sudo pip install --upgrade enum34
     sudo pip install --upgrade pyserial
     sudo pip install --upgrade pyzmq
+    sudo pip install --upgrade grizzly
   EOH
 end
 
